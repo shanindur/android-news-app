@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'org.jetbrains.kotlin.android.extensions'
+
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -13,6 +15,9 @@ android {
         versionCode 1
         versionName "0.0.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    androidExtensions {
+        experimental = true
     }
     buildTypes {
         release {
@@ -48,4 +53,7 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:26.0.0'
 
     implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //circle image view
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
 }

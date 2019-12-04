@@ -2,6 +2,7 @@ package com.app.shanindu.news.fragment
 
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -21,20 +22,22 @@ import com.android.volley.VolleyError
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.app.shanindu.news.R
+import com.app.shanindu.news.activity.DetailActivity
+import com.app.shanindu.news.activity.MainActivity
 import com.app.shanindu.news.adapter.NewsAdapter
+import com.app.shanindu.news.helper.InternetObserver
 import com.app.shanindu.news.model.News
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.shanindu.app.news.helper.InternetObserver
 import org.json.JSONException
 import org.json.JSONObject
+import java.io.Serializable
 import java.util.ArrayList
 
 
 class HomeFragment : Fragment() {
     private val TAG = "HomeFragment"
-    private val ALL_USER_URL = "https://reqres.in/api/users?page=2"
-    private val SINGLE_USER_URL = "https://reqres.in/api/users/"
+
     private val HEADLINES_URL = "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=7e34fe9b5e32418ebc3f42370f1458f3"
 
     private var recyclerView: RecyclerView? = null
@@ -92,7 +95,10 @@ class HomeFragment : Fragment() {
 
         mAdapter?.SetOnItemClickListener(object : NewsAdapter.OnItemClickListener {
             override fun onItemClick(view: View, position: Int, obj: News) {
-//                showDialogDetail(obj)
+                val intent = Intent(context, DetailActivity::class.java)
+//                intent.putExtra("news", News as Serializable)
+                startActivity(intent)
+
             }
         })
     }

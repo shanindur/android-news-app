@@ -1,5 +1,6 @@
 package com.app.shanindu.news.model
 
+import android.os.Parcelable
 import java.io.Serializable
 
 class News : Serializable {
@@ -19,6 +20,8 @@ class News : Serializable {
 //        this.email = email
 //        this.avatar = avatar
 //    }
+
+
 }
 
 
