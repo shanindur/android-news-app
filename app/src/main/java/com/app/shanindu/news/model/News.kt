@@ -4,12 +4,13 @@ import android.os.Parcelable
 import java.io.Serializable
 
 class News : Serializable {
-    var id: String = ""
-    var name: String = ""
     var author: String = ""
     var title: String = ""
     var description: String = ""
+    var url: String = ""
     var urlToImage: String = ""
+    var publishedAt: String = ""
+    var content: String = ""
 
     constructor() {}
 

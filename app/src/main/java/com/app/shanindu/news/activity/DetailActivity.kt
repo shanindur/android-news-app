@@ -15,6 +15,13 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
+        //actionbar
+        val actionbar = supportActionBar
+        //set actionbar title
+        actionbar!!.title = "Detail Activity"
+        //set back button
+        actionbar.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
 
         initComponent()
     }
@@ -24,5 +31,10 @@ class DetailActivity : AppCompatActivity() {
         imgNews = findViewById<ImageView>(R.id.btn_retry)
         txtDescription = findViewById<TextView>(R.id.txt_description)
 
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

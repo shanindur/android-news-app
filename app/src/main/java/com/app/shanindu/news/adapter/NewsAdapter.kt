@@ -32,14 +32,14 @@ class NewsAdapter(val context: Context, val newsList: List<News>) :
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 //        var tvId: TextView
-//        var tvName: TextView
+        var txtHeadline: TextView
         var imgNews: ImageView
         var layout: MaterialRippleLayout
 
 
         init {
             layout = view.findViewById(R.id.layout_parent)
-//            tvId = view.findViewById(R.id.tv_id)
+            txtHeadline = view.findViewById(R.id.txt_headline)
 //            tvName = view.findViewById(R.id.tv_name)
             imgNews = view.findViewById(R.id.img_news)
         }
@@ -61,7 +61,7 @@ class NewsAdapter(val context: Context, val newsList: List<News>) :
         })
 
 //        holder?.tvId?.setText(news.author)
-//        holder?.tvId?.setText(news.author)
+        holder?.txtHeadline?.setText(news.description)
 
         Picasso
                 .get() // give it the context

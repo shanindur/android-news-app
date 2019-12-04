@@ -59,7 +59,7 @@ class HomeFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater.inflate(R.layout.fragment_home, container, false)
-        val context = activity as Context
+
 
         recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view)
         lyt_progress = view.findViewById<LinearLayout>(R.id.lyt_progress)
@@ -69,12 +69,12 @@ class HomeFragment : Fragment() {
 
 
 
-        initComponent(view)
+        initComponent()
         // Inflate the layout for this fragment
         return view
     }
 
-    private fun initComponent(view: View) {
+    private fun initComponent() {
 
         // in content do not change the layout size of the RecyclerView
         recyclerView?.setHasFixedSize(true)
