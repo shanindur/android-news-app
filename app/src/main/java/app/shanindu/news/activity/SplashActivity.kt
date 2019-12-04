@@ -1,10 +1,11 @@
 package com.shanindu.app.news.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.shanindu.app.news.R
+import android.support.v7.app.AppCompatActivity
+import com.app.shanindu.news.R
+import com.app.shanindu.news.activity.MainActivity
 
 
 class SplashActivity : AppCompatActivity() {
