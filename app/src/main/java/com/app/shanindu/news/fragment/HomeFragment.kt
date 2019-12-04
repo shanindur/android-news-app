@@ -12,7 +12,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Toast
 import com.android.volley.DefaultRetryPolicy
@@ -23,7 +22,6 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.app.shanindu.news.R
 import com.app.shanindu.news.activity.DetailActivity
-import com.app.shanindu.news.activity.MainActivity
 import com.app.shanindu.news.adapter.NewsAdapter
 import com.app.shanindu.news.helper.InternetObserver
 import com.app.shanindu.news.model.News
@@ -31,8 +29,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import org.json.JSONException
 import org.json.JSONObject
-import java.io.Serializable
-import java.util.ArrayList
+import java.util.*
 
 
 class HomeFragment : Fragment() {
