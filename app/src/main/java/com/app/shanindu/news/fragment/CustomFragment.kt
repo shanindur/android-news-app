@@ -42,6 +42,7 @@ class CustomFragment : Fragment() {
 
     private var recyclerView: RecyclerView? = null
     private var btnRetry: Button? = null
+    //    private var btnChicp: Button? = null
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var mAdapter: NewsAdapter? = null
     private val newsList = ArrayList<News>()
@@ -69,7 +70,55 @@ class CustomFragment : Fragment() {
         lyt_connection = view.findViewById<LinearLayout>(R.id.lyt_connection)
         btnRetry = view.findViewById<Button>(R.id.btn_retry)
 
+        val btnBitcoin = view.findViewById<Button>(R.id.btn_bitcoin)
+        val btnApple = view.findViewById<Button>(R.id.btn_apple)
+        val btnEarthquake = view.findViewById<Button>(R.id.btn_earthquake)
+        val btnAnimal = view.findViewById<Button>(R.id.btn_animal)
+
         initComponent()
+
+        btnBitcoin.setBackgroundResource(R.drawable.btn_chip_enable)
+        btnApple.setBackgroundResource(R.drawable.btn_chip_disable)
+        btnEarthquake.setBackgroundResource(R.drawable.btn_chip_disable)
+        btnAnimal.setBackgroundResource(R.drawable.btn_chip_disable)
+
+        btnBitcoin.setOnClickListener {
+            // your code to perform when the user clicks on the button
+            fetchCustomData("bitcoin")
+            btnBitcoin.setBackgroundResource(R.drawable.btn_chip_enable)
+            btnApple.setBackgroundResource(R.drawable.btn_chip_disable)
+            btnEarthquake.setBackgroundResource(R.drawable.btn_chip_disable)
+            btnAnimal.setBackgroundResource(R.drawable.btn_chip_disable)
+
+        }
+        btnApple.setOnClickListener {
+            // your code to perform when the user clicks on the button
+            fetchCustomData("apple")
+            btnBitcoin.setBackgroundResource(R.drawable.btn_chip_disable)
+            btnApple.setBackgroundResource(R.drawable.btn_chip_enable)
+            btnEarthquake.setBackgroundResource(R.drawable.btn_chip_disable)
+            btnAnimal.setBackgroundResource(R.drawable.btn_chip_disable)
+
+        }
+        btnEarthquake.setOnClickListener {
+            // your code to perform when the user clicks on the button
+            fetchCustomData("earthquake")
+            btnBitcoin.setBackgroundResource(R.drawable.btn_chip_disable)
+            btnApple.setBackgroundResource(R.drawable.btn_chip_disable)
+            btnEarthquake.setBackgroundResource(R.drawable.btn_chip_enable)
+            btnAnimal.setBackgroundResource(R.drawable.btn_chip_disable)
+
+        }
+        btnAnimal.setOnClickListener {
+            // your code to perform when the user clicks on the button
+            fetchCustomData("animal")
+            btnBitcoin.setBackgroundResource(R.drawable.btn_chip_disable)
+            btnApple.setBackgroundResource(R.drawable.btn_chip_disable)
+            btnEarthquake.setBackgroundResource(R.drawable.btn_chip_disable)
+            btnAnimal.setBackgroundResource(R.drawable.btn_chip_enable)
+
+        }
+
 
         // Inflate the layout for this fragment
         return view

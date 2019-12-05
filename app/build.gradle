@@ -56,4 +56,11 @@ dependencies {
 
     //circle image view
     implementation 'de.hdodenhof:circleimageview:2.2.0'
+
+    //ormlite
+    implementation group: 'com.j256.ormlite', name: 'ormlite-android', version: '5.0'
+
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.4'
+
+
 }

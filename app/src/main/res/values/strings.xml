@@ -5,8 +5,17 @@
     <string name="title_headline">Headline</string>
     <string name="no_internet">No internet</string>
     <string name="btn_text_register">Register</string>
-    <string name="text_username">Enter Username</string>
+    <string name="btn_text_logout">Logout</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    ProfileFragment-->
+    <string name="text_username">Username</string>
+    <string name="text_fname">First Name</string>
+    <string name="text_lname">Last Name</string>
+
+    <!--    CustomFragment-->
+    <string name="btn_text_bitcoin">Bitcoin</string>
+    <string name="btn_text_apple">Apple</string>
+    <string name="btn_text_earthquake">Earthquake</string>
+    <string name="btn_text_animal">Animal</string>
 </resources>
