@@ -25,6 +25,7 @@ import com.app.shanindu.news.activity.DetailActivity
 import com.app.shanindu.news.adapter.NewsAdapter
 import com.app.shanindu.news.helper.InternetObserver
 import com.app.shanindu.news.model.News
+import com.app.shanindu.news.model.Newss
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import org.json.JSONException
@@ -93,7 +94,7 @@ class HomeFragment : Fragment() {
         mAdapter?.SetOnItemClickListener(object : NewsAdapter.OnItemClickListener {
             override fun onItemClick(view: View, position: Int, obj: News) {
                 val intent = Intent(context, DetailActivity::class.java)
-//                intent.putExtra("news", News as Serializable)
+                intent.putExtra("news", Newss.toString())
                 startActivity(intent)
 
             }

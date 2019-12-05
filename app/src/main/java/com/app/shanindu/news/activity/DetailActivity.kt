@@ -23,6 +23,9 @@ class DetailActivity : AppCompatActivity() {
         actionbar.setDisplayHomeAsUpEnabled(true)
         actionbar.setDisplayHomeAsUpEnabled(true)
 
+        var intent = intent
+        val author = intent.getStringExtra("")
+
         initComponent()
     }
 
