@@ -143,7 +143,13 @@ class CustomFragment : Fragment() {
         mAdapter?.SetOnItemClickListener(object : NewsAdapter.OnItemClickListener {
             override fun onItemClick(view: View, position: Int, obj: News) {
                 val intent = Intent(context, DetailActivity::class.java)
-//                intent.putExtra("news", News as Serializable)
+                intent.putExtra("author", obj.author)
+                intent.putExtra("title", obj.title)
+                intent.putExtra("description", obj.description)
+                intent.putExtra("url", obj.url)
+                intent.putExtra("urlToImage", obj.urlToImage)
+                intent.putExtra("publishedAt", obj.publishedAt)
+                intent.putExtra("content", obj.content)
                 startActivity(intent)
 
             }

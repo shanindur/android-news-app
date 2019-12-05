@@ -13,7 +13,7 @@ import com.balysv.materialripple.MaterialRippleLayout
 import com.squareup.picasso.Picasso
 
 
-class NewsAdapter(val context: Context, val newsList: List<News>) :
+class NewsAdapter(val context: Context?, val newsList: List<News>) :
         RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
 
     private var mOnItemClickListener: OnItemClickListener? = null
@@ -61,7 +61,7 @@ class NewsAdapter(val context: Context, val newsList: List<News>) :
         })
 
 //        holder?.tvId?.setText(news.author)
-        holder?.txtHeadline?.setText(news.description)
+        holder?.txtHeadline?.setText(news.title)
 
         Picasso
                 .get() // give it the context

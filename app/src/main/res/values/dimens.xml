@@ -35,6 +35,7 @@
     <dimen name="text_large">20sp</dimen>
     <dimen name="text_xlarge">26sp</dimen>
     <dimen name="text_xxlarge">36sp</dimen>
+    <dimen name="text_xxxlarge">40sp</dimen>
 
     <!--general spacing-->
     <dimen name="spacing_xsmall">2dp</dimen>

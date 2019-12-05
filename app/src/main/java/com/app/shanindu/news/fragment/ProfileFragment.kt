@@ -48,10 +48,7 @@ class ProfileFragment : Fragment() {
         layoutRegister.visibility = View.VISIBLE;
         layoutInfo.visibility = View.GONE;
 
-        if (dao.queryForAll() != null) {
-            Toast.makeText(context, " registered!", Toast.LENGTH_LONG).show()
 
-        }
 
         btnRegister.setOnClickListener {
 

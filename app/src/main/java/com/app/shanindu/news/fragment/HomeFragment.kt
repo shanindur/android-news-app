@@ -1,7 +1,6 @@
 package com.app.shanindu.news.fragment
 
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -25,7 +24,6 @@ import com.app.shanindu.news.activity.DetailActivity
 import com.app.shanindu.news.adapter.NewsAdapter
 import com.app.shanindu.news.helper.InternetObserver
 import com.app.shanindu.news.model.News
-import com.app.shanindu.news.model.Newss
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import org.json.JSONException
@@ -39,7 +37,6 @@ class HomeFragment : Fragment() {
     private val HEADLINES_URL = "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=7e34fe9b5e32418ebc3f42370f1458f3"
 
     private var recyclerView: RecyclerView? = null
-    private var btnRetry: Button? = null
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var mAdapter: NewsAdapter? = null
     private val newsList = ArrayList<News>()
@@ -65,12 +62,12 @@ class HomeFragment : Fragment() {
         recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view)
         lyt_progress = view.findViewById<LinearLayout>(R.id.lyt_progress)
         lyt_connection = view.findViewById<LinearLayout>(R.id.lyt_connection)
-        btnRetry = view.findViewById<Button>(R.id.btn_retry)
 
-
-
+        val btnRetry = view.findViewById<Button>(R.id.btn_retry)
 
         initComponent()
+
+        btnRetry.setOnClickListener { fetchData() }
         // Inflate the layout for this fragment
         return view
     }
@@ -94,7 +91,15 @@ class HomeFragment : Fragment() {
         mAdapter?.SetOnItemClickListener(object : NewsAdapter.OnItemClickListener {
             override fun onItemClick(view: View, position: Int, obj: News) {
                 val intent = Intent(context, DetailActivity::class.java)
-                intent.putExtra("news", Newss.toString())
+
+                intent.putExtra("author", obj.author)
+                intent.putExtra("title", obj.title)
+                intent.putExtra("description", obj.description)
+                intent.putExtra("url", obj.url)
+                intent.putExtra("urlToImage", obj.urlToImage)
+                intent.putExtra("publishedAt", obj.publishedAt)
+                intent.putExtra("content", obj.content)
+
                 startActivity(intent)
 
             }
