@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.StaggeredGridLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -78,12 +79,12 @@ class HomeFragment : Fragment() {
         recyclerView?.setHasFixedSize(true)
 
         // use a linear layout manager
-        layoutManager = LinearLayoutManager(context)
-        recyclerView?.setLayoutManager(layoutManager)
+        layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        recyclerView?.layoutManager = layoutManager
 
         // specify an adapter
         mAdapter = NewsAdapter(context, newsList)
-        recyclerView?.setAdapter(mAdapter)
+        recyclerView?.adapter = mAdapter
 
         fetchData()
 

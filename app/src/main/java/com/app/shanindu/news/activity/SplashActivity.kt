@@ -24,7 +24,7 @@ class SplashActivity : AppCompatActivity() {
         val manager = this.packageManager
         val info = manager.getPackageInfo(this.packageName, PackageManager.GET_ACTIVITIES)
 
-        txtVersion.setText("Version " + info.versionName)
+        txtVersion.text = "Version " + info.versionName
 
 
         Handler().postDelayed(Runnable {
